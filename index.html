@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="data:image/png;base64,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"
+        type="image/x-icon" />
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <title>CarSuperStore</title>
+
+</head>
+
+<body>
+    <div id="main">
+        <header>
+            <div id="menu">
+                <img id="logo" src="honhanh/logo1.png"></a>
+                <ul id="nav">
+                    <li><a href="">Home</a></li>
+                    <li>
+                        <a href="#">Catalogs <i class="fas fa-caret-down"></i></a>
+                        <ul class="subnav">
+                            <li><a href="">Lamborghini</a></li>
+                            <li><a href="">Ferrari</a></li>
+                            <li><a href="">Audi</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+
+
+                <label for="nav_search" class="search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </label>
+                <input class="search_input" hidden style="float: right;" type="checkbox" name="" id="nav_search">
+                <label for="nav_search" class="nav__search_overlay">
+                </label>
+
+                <div class="searchform">
+                    <input type="text" style="outline: none;"><button type="submit">Search</button>
+                </div>
+
+
+                <!-- end nav-->
+                <!--mobilemenu-->
+                <label class="buttonbar" for="nav_mobile_input"><i class="fas fa-bars"></i></label>
+                <input class="nav__input" hidden type="checkbox" id="nav_mobile_input">
+                <label for="nav_mobile_input" class="nav__overlay">
+                </label>
+                <!--Begin search button-->
+
+                <nav id="nav__mobile">
+                    <label for="nav_mobile_input" class="nav__mobile__close">
+                        <i class="fas fa-times"></i>
+                    </label>
+                    <ul id="nav__mobile__list">
+                        <li><a href="">Home</a></li>
+                        <li>
+                            <a href="#">Catalogs <i class="fas fa-caret-down"></i></a>
+                            <ul class="subnav__mobile">
+                                <li><a href="">Lamborghini</a></li>
+                                <li><a href="">Ferrari</a></li>
+                                <li><a href="">Audi</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Search</a></li>
+                    </ul>
+                </nav>
+
+                <!--end search button-->
+            </div>
+        </header>
+
+        <section>
+            <img class="imgcaro" src="https://demo.vehica.com/wp-content/uploads/2020/10/bg-1920-new.jpg">
+            <div class="loichao">
+                <h1 id="loichao">Wellcome to</h1>
+                <h1 id="loichao2">Bi Super Store</h1>
+            </div>
+            <div class="grid wide">
+                <div id="noidung">
+                    <!--Abuot section-->
+                    <div class="content-section">
+                        <h2 class="sectionheading">VARIETY OF CARS</h2>
+                        <p class="sectionsub">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna</p>
+                    </div>
+                    <!--Imgaes section-->
+                    <div class="row row-mb">
+                        <div class="col l-3 m-3 c-3 padding_leri col-mb">
+                            <div class="carbox">
+                                <figure>
+                                    <img class="carimages" src="honhanh/car4.png">
+                                </figure>
+                                <a href="">
+                                    Lamborghini
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-3 c-3 padding_leri col-mb">
+                            <div class="carbox">
+                                <figure>
+                                    <img class="carimages" src="honhanh/car5.png">
+                                </figure>
+                                <a href="
+                            "> Ferrari
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-3 c-3 padding_leri col-mb">
+                            <div class="carbox">
+                                <figure>
+                                    <img class="carimages" src="honhanh/car6.png">
+                                </figure>
+                                <a href="">
+                                    Audi
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-3 c-3 padding_leri col-mb">
+                            <div class="carbox">
+                                <figure>
+                                    <img class="carimages" src="honhanh/car7.png">
+                                </figure>
+                                <a href="">
+                                    Mclaren
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Featured">
+                    <div id="Featured-list">
+                        <h3>Handy picked</h3>
+                        <h2>Featured Listings</h2>
+                    </div>
+                    <div id="carfeatured">
+                        <div id="car-list" class="row">
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car11.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: blue; padding: 0.5; color:blue;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car10.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: yellow; padding: 0.5; color:yellow;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car12.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: red; padding: 0.5; color:red;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car13.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: gray; padding: 0.5; color:gray;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car14.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: red; padding: 0.5; color:red;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car15.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: white; padding: 0.5; color:white;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car16.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: blue; padding: 0.5; color:blue;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car17.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: black; padding: 0.5; color:black;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car19.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: blue; padding: 0.5; color:blue;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car18.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: white; padding: 0.5; color:white;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car20.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: orangered; padding: 0.5; color:orangered;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car21.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: yellow; padding: 0.5; color:yellow;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car22.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: greenyellow; padding: 0.5; color:greenyellow;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car23.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: lightblue; padding: 0.5; color:lightblue;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car24.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: lightgray; padding: 0.5; color:lightgray;">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-3 m-4 c-12">
+                                <div class="featuredbox">
+                                    <div class="imgcar">
+                                        <img src="honhanh/car25.jpg"> alt="">
+                                    </div>
+                                    <div class="thongtinxe">
+                                        <h5>name</h5>
+                                        <div class="row">
+                                            <div class="col l-6 m-6 c-6">
+                                                <h6 class="price">1000$</h6>
+                                            </div>
+                                            <div class="col l-6 m-6 c-6 ">
+                                                <button onclick="showBuycar()" class="js-buy-car">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">2022</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">description</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item">fuel</div>
+                                            </div>
+                                            <div class="col l-3 m-3 c-3">
+                                                <div class="item"><span
+                                                        style="background-color: rgb(41, 53, 41); padding: 0.5; color: rgb(41, 53, 41);">color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="noidung" class="contact-bg">
+                <div class="grid wide">
+                    <div class="content-section">
+                        <h2 class="sectionheading" style="color: white;">Contact</h2>
+                        <p class="sectionsub" style="color: white;">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+                    </div>
+                    <div class="row contact-content">
+                        <div class="col l-6 m-6 c-12">
+                            <div id="address">
+                                <p><i class="fas fa-map-marker-alt"></i> 20 Duong 1B Phuong An lac Quan Binh Tan</p>
+                                <p><i class="fas fa-phone-alt"></i><a href="tel:0927110910">0927110910</a></p>
+                                <p><i class="fas fa-envelope"></i><a
+                                        href="mailto:iphoneboy46@gmail.com">iphoneboy46@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="col l-6 m-6 c-12">
+                            <form action="">
+                                <div class="row">
+                                    <div class="col l-6 m-6 c-12">
+                                        <input required type="text" placeholder="Name" class="form-control">
+                                    </div>
+                                    <div class="col l-6 m-6 c-12 mrt-8">
+                                        <input required type="email" placeholder="Email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row mt-8">
+                                    <div class="col l-12 m-12 c-12">
+                                        <input required type="text" placeholder="Messenger" class="form-control">
+                                    </div>
+                                </div>
+                                <input class="form-sub-btn mt-16 " type="submit" value="SEND">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="map-section">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.1094895912706!2d106.61496851486343!3d10.72603786305458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752de87927878d%3A0xcc20b197d0d21635!2zMjAgxJDGsOG7nW5nIHPhu5EgMUIsIEFuIEzhuqFjLCBCw6xuaCBUw6JuLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1649934833716!5m2!1svi!2s"
+                    width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        <footer>
+            <div class="socials-list">
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-instagram-square"></i></a>
+                <a href=""><i class="fab fa-pinterest-square"></i></a>
+                <a href=""><i class="fab fa-twitter-square"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright">Power by <a href="">Bi Super Car</a></p>
+        </footer>
+    </div>
+    <div class="mo js-mo">
+        <div class="mo-contaier js-container">
+            <div class="mo-close js-mo-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <header>
+                <div class="hea">
+                    <i style="margin-right: 10px;" class="fa fa-shopping-bag"></i> Cart
+                </div>
+            </header>
+            <section style="padding: 16px;">
+                <div class="mo-body">
+                    <label for="tkquantity" class="mo-lable">
+                        <i class="fas fa-car"></i> Number of cars you want to buy
+                    </label>
+                    <br>
+                    <input id="tkquantity" class="mo-input" type="text" value="1">
+                </div>
+                <div class="mo-body">
+                    <label for="tkemail" class="mo-lable">
+                        <i class="fas fa-envelope"></i> Send to
+                    </label>
+                    <br>
+                    <input id="tkemail" class="mo-input" type="email" placeholder="Enter Email">
+                </div>
+
+                <button id="buycar">Pay <i class="fas fa-check"></i></button>
+            </section>
+            <footer id="fter">
+                <p class="mo-help">Need <a href="">Help?</a></p>
+            </footer>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+<script src="buy.js"></script>
+
+</html>
