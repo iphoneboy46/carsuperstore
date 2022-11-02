@@ -1,0 +1,343 @@
+.container {
+    width: 100%;
+    height: 800px;
+    margin: 50px auto;
+    background-size: 100%;
+    background: url(https://tapchisieuxe.com/wp-content/uploads/2021/09/block-background.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+
+.direction {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    z-index: 3;
+}
+
+.direction>button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    opacity: 0.4;
+
+}
+
+.direction>button:hover {
+    transition: all 0.5s linear;
+    opacity: 1;
+}
+
+#slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#slide .item-car {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#slide .item-car .image {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    opacity: 0;
+    transform: scale(3);
+    transition: all 1s ease-in-out;
+}
+
+#slide .item-car .image img {
+    width: 55%;
+    transition: 0.5s
+}
+
+#slide .item-car .image img:hover {
+    transform: scale(1.1)
+}
+
+.content .left {
+    position: absolute;
+    left: 2%;
+    top: 10%;
+    display: none;
+
+}
+
+.content .left>h1 {
+    width: 600px;
+    letter-spacing: 5px;
+    line-height: calc(60px / 120px);
+    text-transform: uppercase;
+    font-size: 60px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+}
+
+.content .left>.des {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.6;
+    margin-bottom: 20px;
+}
+
+
+
+.content .right .img {
+    width: 250px;
+    height: 250px;
+    margin-top: 50px;
+}
+
+.content .right .img>img {
+    width: 100%;
+    height: 100%;
+}
+
+.content .right {
+    position: absolute;
+    right: 2%;
+    top: 10%;
+    display: none;
+}
+
+.content .left>h4 {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+}
+
+.content .left ul {
+    list-style: none;
+}
+
+.content .left ul>li {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.content .left button {
+    font-size: 20px;
+    background: black;
+    font-weight: bolder;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    transition: 1s linear;
+}
+
+.content .left button::before {
+    content: "";
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    border-radius: inherit;
+    background-color: yellow;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 1s ease-in-out;
+
+}
+
+.content .left button:hover::before {
+    transition: 1s ease-in-out;
+    left: 0;
+}
+
+.content .left button:hover {
+    color: black;
+}
+
+.content .left ul li h3 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.content .left ul li p {
+    margin-left: 20px;
+    color: white;
+    font-weight: 500;
+}
+
+#slide .item-car:nth-child(1) .image {
+    opacity: 0;
+    transform: scale(0) translate(-100px);
+}
+
+#slide .item-car:nth-child(2) .image {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#slide .item-car:nth-child(2) {
+    z-index: 3;
+}
+
+@keyframes contentOut {
+    from {
+        opacity: 1;
+        transform: translate(0, 0)
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(0, -100%);
+        filter: blur(113px);
+    }
+}
+
+@keyframes contentIn {
+    from {
+        opacity: 0;
+        transform: translate(0, 100%);
+        filter: blur(33px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+#slide .item-car:nth-child(1) .left,
+#slide .item-car:nth-child(1) .right,
+#slide .item-car:nth-child(2) .left,
+#slide .item-car:nth-child(2) .right {
+    display: block;
+}
+
+
+#slide .item-car:nth-child(1) .left,
+#slide .item-car:nth-child(1) .right {
+    animation: contentOut 1s ease-in-out 1 forwards;
+}
+
+
+#slide .item-car:nth-child(2) .left,
+#slide .item-car:nth-child(2) .right {
+    animation: contentIn 1s ease-in-out 1 forwards;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        background-color: black;
+        background-image: none;
+    }
+
+
+
+    .content .left>h1 {
+        width: 300px;
+        font-size: 30px;
+    }
+
+    .content .left>.des {
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        opacity: 0.6;
+        margin-bottom: 20px;
+    }
+
+
+    .content .left>h4 {
+        font-size: 15px;
+    }
+
+
+    #slide .item-car .image img {
+        width: 80%;
+        transition: 0.5s
+    }
+
+
+    .content .left ul li h3 {
+        margin-bottom: 15px;
+        color: white;
+    }
+
+    .content .right .img {
+        width: 200px;
+        height: 200px;
+    }
+
+
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        background-color: black;
+        background-image: none;
+    }
+
+
+
+    .content .left>h1 {
+        width: 100%;
+        font-size: 30px;
+    }
+
+    .content .left>.des {
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        opacity: 0.6;
+        margin-bottom: 20px;
+    }
+
+
+    .content .left>h4 {
+        font-size: 15px;
+    }
+
+
+    #slide .item-car .image img {
+        width: 100%;
+        transition: 0.5s
+    }
+
+
+    .content .left ul li h3 {
+        margin-bottom: 15px;
+        color: white;
+    }
+
+    .content .right .img {
+        width: 200px;
+        height: 200px;
+        display: none;
+    }
+
+
+}
